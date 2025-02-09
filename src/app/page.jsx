@@ -75,7 +75,7 @@ export default function Home() {
   // Hàm xuất ảnh PNG
   const exportImage = useCallback(() => {
     if (!ref.current) return;
-    toPng(ref.current, { cacheBust: true }).then((dataUrl) => {
+    toPng(ref.current).then((dataUrl) => {
       const link = document.createElement("a");
       link.download = "player-card.png";
       link.href = dataUrl;
@@ -98,15 +98,19 @@ export default function Home() {
 
   return (
     <div id="full-container" className="flex justify-center">
-      <div id="fb-container" className="flex justify-center relative">
-        <div ref={ref} className="flex justify-center relative">
+      <div
+
+        id="fb-container"
+        className="flex flex-col justify-center relative"
+      >
+        <div         ref={ref} className="flex justify-center relative">
           <Image width={700} src={bgrImg} alt="Background" />
-          <div className="absolute left-[150px] top-[100px] text-white font-bold w-[70px]">
-            <span className="text-center text-[50px]">{player.number}</span>
+          <div className="absolute text-center left-[150px] top-[91px] text-white font-bold w-[70px]">
+            <span className="text-center  text-[50px]">{player.number}</span>
             <div className="bg-red-600 text-center py-1 px-2">
               {player.position}
             </div>
-            <div className="mt-2 space-y-1">
+            <div className="mt-3">
               {["SPE", "STR", "STA", "CON", "TAC", "SHO"].map((stat) => (
                 <div key={stat} className="flex justify-between">
                   <span>{stat}:</span>
@@ -159,6 +163,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <h1 className="text-gray-500">CREATE YOUR OWN CARD AT 1KVIEW.COM/CARD</h1>
       </div>
 
       <div>
