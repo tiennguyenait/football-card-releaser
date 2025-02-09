@@ -3,15 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack -p 4444",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 4444",
     "lint": "next lint"
   },
   "dependencies": {
+    "antd": "^5.22.5",
+    "axios": "^1.7.9",
+    "dom-to-image": "^2.6.0",
+    "html-to-image": "^1.11.11",
+    "html2canvas": "^1.4.1",
+    "iconify": "^1.4.0",
+    "next": "15.1.6",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.1.6"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "postcss": "^8",
